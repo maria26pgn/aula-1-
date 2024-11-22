@@ -1,0 +1,23 @@
+import React from 'react';
+
+function CalculadoraIMC({ peso, altura }) {
+  const imc = (peso / (altura * altura)).toFixed(2);
+
+  const classificarIMC = (imc) => {
+    if (imc < 18.5) return 'Abaixo do Peso';
+    if (imc < 24.9) return 'Peso Normal';
+    if (imc < 29.9) return 'Sobrepeso';
+    return 'Obesidade';
+  };
+
+  return (
+    <div style={{ marginTop: '20px', border: '1px solid #ddd', padding: '10px', borderRadius: '5px' }}>
+      <p><strong>Peso:</strong> {peso} kg</p>
+      <p><strong>Altura:</strong> {altura} m</p>
+      <p><strong>IMC:</strong> {imc}</p>
+      <p><strong>Classificação:</strong> {classificarIMC(imc)}</p>
+    </div>
+  );
+}
+
+export default CalculadoraIMC;
