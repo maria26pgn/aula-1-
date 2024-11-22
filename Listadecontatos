@@ -1,0 +1,32 @@
+import React from 'react';
+
+function Contato({ nome, sobrenome, cpf, telefone, email }) {
+  return (
+    <div style={{ marginBottom: '10px', border: '1px solid #ddd', padding: '10px', borderRadius: '5px' }}>
+      <p><strong>Nome:</strong> {nome} {sobrenome}</p>
+      <p><strong>CPF:</strong> {cpf}</p>
+      <p><strong>Contato:</strong> {telefone}</p>
+      <p><strong>Email:</strong> {email}</p>
+    </div>
+  );
+}
+
+function ListaDeContatos() {
+  const contatos = [
+    { nome: 'Andrilene', sobrenome: 'Souza', cpf: '738.635.371-52', telefone: '(84) 99534-3630', email: 'ansrilee1276@gmail.com' },
+    { nome: 'Maria', sobrenome: 'Santos', cpf: '115.837.993-52', telefone: '(84) 93674-2578', email: 'maria@email.com' },
+    { nome: 'Ana', sobrenome: 'Santos', cpf: '293.389.981-52', telefone: '(84) 92222-2645', email: 'ana@email.com' },
+    { nome: 'Carlos', sobrenome: 'Santos', cpf: '372-739-291-52', telefone: '(84) 33333-3653', email: 'carlos@email.com' },
+    { nome: 'Fernanda', sobrenome: 'Santas', cpf: '274.492.463-54', telefone: '(84) 44444-4444', email: 'fernanda@email.com' },
+  ];
+
+  return (
+    <div>
+      {contatos.map((contato, index) => (
+        <Contato key={index} {...contato} />
+      ))}
+    </div>
+  );
+}
+
+export default ListaDeContatos;
