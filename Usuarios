@@ -1,0 +1,12 @@
+import React from 'react';
+
+   const Usuario = ({ nome, sobrenome, cpf, telefone, email }) => {
+       return (
+           <div>
+               <p>Nome: {nome} {sobrenome}</p>
+               <p>CPF: {cpf}</p>
+               <p>Contato: {telefone}</p>
+               <p>Email: {email}</p>
+           </div>
+       );
+   };
